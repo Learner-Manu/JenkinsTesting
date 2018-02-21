@@ -19,9 +19,14 @@ pipeline {
     }
     stage("Test & Quality"){
       parallel {
-      stage('Test') {
+      stage('Unit Test') {
       steps {
-        echo 'test'
+        echo 'unit test'
+      }
+    }
+    stage('Code coverage') {
+      steps {
+        echo 'code coverage'
       }
     }
     stage('Static Analysis') {

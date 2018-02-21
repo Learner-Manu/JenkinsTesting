@@ -25,11 +25,8 @@ pipeline {
     }
   }
   }
-    stage('Load Test') {
-      steps {
-        echo 'load test'
-      }
-    }
+
+
     
   }
 }
