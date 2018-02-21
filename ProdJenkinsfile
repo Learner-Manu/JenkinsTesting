@@ -1,14 +1,33 @@
 pipeline {
   agent any
   stages {
-    stage('pull image') {
+    stage('Pull Image') {
       steps {
         echo 'scm'
       }
     }
-    stage('Build') {
+   stage("Pre Prod Tests"){
+      parallel {
+      stage('Load Test') {
       steps {
-        echo 'build'
+        echo 'load test'
+      }
+    }
+    stage('Performance Test') {
+      steps {
+        echo 'Performance test'
+      }
+    }
+    stage('Stress Test') {
+      steps {
+        echo 'stress test'
+      }
+    }
+  }
+  }
+    stage('Load Test') {
+      steps {
+        echo 'load test'
       }
     }
     

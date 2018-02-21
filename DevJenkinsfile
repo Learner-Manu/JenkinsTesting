@@ -6,6 +6,12 @@ pipeline {
         echo 'scm'
       }
     }
+    stage('Sanity Check') {
+      steps {
+        echo 'clean code'
+      }
+    }
+
     stage('Build') {
       steps {
         echo 'build'
