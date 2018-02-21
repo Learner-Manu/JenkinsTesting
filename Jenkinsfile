@@ -21,7 +21,7 @@ pipeline {
         echo 'dockerize'
       }
     }
-    stage('Dockerize') {
+    stage('Publish Image') {
       steps {
         echo 'dockerize'
       }
