@@ -6,40 +6,21 @@ pipeline {
         echo 'pull update'
       }
     }
-    stage('Build') {
-      steps {
-        echo 'build'
-      }
-    }
-    stage("Test & Quality"){
+    stage("Browser Test"){
       parallel {
-      stage('Test') {
+      stage('Chrome') {
       steps {
-        echo 'test'
+        echo 'chrome test'
       }
     }
-    stage('Static Analysis') {
+    stage('Firefox') {
       steps {
-        echo 'sonar static analysis'
+        echo 'firefox test'
       }
     }
-      }
-    }
-    
-    stage('Dockerize') {
+    stage('Internet Explorer') {
       steps {
-        echo 'dockerize'
-      }
-    }
-    stage('Publish Image') {
-      steps {
-        echo 'dockerize'
-      }
-    }
-
-    stage('Deploy site') {
-      steps {
-        echo 'deploy'
+        echo 'ie test'
       }
     }
   }
