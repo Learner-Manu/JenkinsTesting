@@ -53,5 +53,25 @@ pipeline {
         echo 'deploy'
       }
     }
+
+    stage("Notification"){
+      parallel {
+      stage('Update Jira') {
+      steps {
+        echo 'load test'
+      }
+    }
+    stage('Send Mail') {
+      steps {
+        echo 'send mail'
+      }
+    }
+    stage('Send IM') {
+      steps {
+        echo 'send im'
+      }
+    }
+  }
+  }
   }
 }

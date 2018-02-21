@@ -1,11 +1,13 @@
 pipeline {
   agent any
   stages {
+      
     stage('Pull Image') {
       steps {
         echo 'scm'
       }
     }
+
    stage("Pre Prod Tests"){
       parallel {
       stage('Load Test') {
