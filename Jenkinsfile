@@ -1,14 +1,21 @@
 pipeline {
   agent any
   stages {
-    stage('scm') {
+    stage('Scm') {
       steps {
         echo 'scm'
       }
     }
-    stage('build') {
+    stage('Build') {
       steps {
         echo 'build'
+      }
+    }
+    stage("Test & Quality"){
+      parallel {
+      stage('Test') {
+      steps {
+        echo 'test'
       }
     }
     stage('Quality') {
@@ -16,6 +23,9 @@ pipeline {
         echo 'build'
       }
     }
+      }
+    }
+    
     stage('Dockerize') {
       steps {
         echo 'dockerize'
