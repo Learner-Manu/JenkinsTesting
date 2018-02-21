@@ -24,6 +24,11 @@ pipeline {
         echo 'unit test'
       }
     }
+    stage('Integration Test') {
+      steps {
+        echo 'integration test'
+      }
+    }
     stage('Code coverage') {
       steps {
         echo 'code coverage'
@@ -42,7 +47,7 @@ pipeline {
         echo 'dockerize'
       }
     }
-    stage('Publish') {
+    stage('Publish Image') {
       steps {
         echo 'dockerize'
       }
@@ -81,7 +86,7 @@ pipeline {
         echo 'delete workspace'
       }
     }
-    stage('Remove Dangling Images') {
+    stage('Clean Dangling images') {
       steps {
         echo 'remove dangling images'
       }
