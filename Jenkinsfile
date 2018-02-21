@@ -6,5 +6,10 @@ pipeline {
         echo 'scm'
       }
     }
+    stage('build') {
+      steps {
+        echo 'build'
+      }
+    }
   }
 }
