@@ -28,12 +28,6 @@ pipeline {
   }
   }
 
-   stage('Security Testing') {
-      steps {
-        echo 'security testing'
-      }
-    }
-
       stage('Deploy') {
       steps {
         echo 'deploy'

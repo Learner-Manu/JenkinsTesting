@@ -26,6 +26,12 @@ pipeline {
   }
   }
 
+    stage('Security Test') {
+      steps {
+        echo 'security testing'
+      }
+    }
+
     stage('Deploy') {
       steps {
         echo 'deploy'
