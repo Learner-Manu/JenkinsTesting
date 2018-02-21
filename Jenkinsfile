@@ -11,5 +11,26 @@ pipeline {
         echo 'build'
       }
     }
+    stage('Quality') {
+      steps {
+        echo 'build'
+      }
+    }
+    stage('Dockerize') {
+      steps {
+        echo 'dockerize'
+      }
+    }
+    stage('Dockerize') {
+      steps {
+        echo 'dockerize'
+      }
+    }
+
+    stage('Deploy site') {
+      steps {
+        echo 'deploy'
+      }
+    }
   }
 }
