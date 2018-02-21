@@ -1,0 +1,46 @@
+pipeline {
+  agent any
+  stages {
+    stage('Pull Update') {
+      steps {
+        echo 'pull update'
+      }
+    }
+    stage('Build') {
+      steps {
+        echo 'build'
+      }
+    }
+    stage("Test & Quality"){
+      parallel {
+      stage('Test') {
+      steps {
+        echo 'test'
+      }
+    }
+    stage('Static Analysis') {
+      steps {
+        echo 'sonar static analysis'
+      }
+    }
+      }
+    }
+    
+    stage('Dockerize') {
+      steps {
+        echo 'dockerize'
+      }
+    }
+    stage('Publish Image') {
+      steps {
+        echo 'dockerize'
+      }
+    }
+
+    stage('Deploy site') {
+      steps {
+        echo 'deploy'
+      }
+    }
+  }
+}

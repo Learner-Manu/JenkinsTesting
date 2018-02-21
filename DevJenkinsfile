@@ -18,9 +18,9 @@ pipeline {
         echo 'test'
       }
     }
-    stage('Quality') {
+    stage('Static Analysis') {
       steps {
-        echo 'build'
+        echo 'sonar static analysis'
       }
     }
       }
