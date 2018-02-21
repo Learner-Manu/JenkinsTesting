@@ -42,19 +42,19 @@ pipeline {
         echo 'dockerize'
       }
     }
-    stage('Publish Image') {
+    stage('Publish') {
       steps {
         echo 'dockerize'
       }
     }
 
-    stage('Deploy site') {
+    stage('Deploy') {
       steps {
         echo 'deploy'
       }
     }
 
-    stage("Notification"){
+    stage("Notify"){
       parallel {
       stage('Update Jira') {
       steps {
@@ -72,6 +72,21 @@ pipeline {
       }
     }
   }
+  }
+
+  stage('Cleanup') {
+     parallel {
+       stage('Delete workspace') {
+      steps {
+        echo 'delete workspace'
+      }
+    }
+    stage('Remove Dangling Images') {
+      steps {
+        echo 'remove dangling images'
+      }
+    }
+     }
   }
   }
 }

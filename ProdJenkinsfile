@@ -1,7 +1,7 @@
 pipeline {
   agent any
   stages {
-      
+
     stage('Pull Image') {
       steps {
         echo 'scm'
@@ -27,6 +27,12 @@ pipeline {
     }
   }
   }
+
+   stage('Security Testing') {
+      steps {
+        echo 'security testing'
+      }
+    }
 
 
     
