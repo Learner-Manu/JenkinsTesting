@@ -17,7 +17,7 @@ pipeline {
         echo 'build'
       }
     }
-    stage("Test & Quality"){
+    stage("Test & Code Quality"){
       parallel {
       stage('Unit Test') {
       steps {
